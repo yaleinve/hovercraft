@@ -60,6 +60,6 @@ if __name__ == '__main__':     # Program start from here
     while True:
       print rc_time(pin_to_circuit)
   except KeyboardInterrupt:
-    pass
-  finally:
-    GPIO.cleanup()
+    GPIO.output(pin_to_circuit, GPIO.LOW)   # light sensor off
+    GPIO.cleanup() 
+

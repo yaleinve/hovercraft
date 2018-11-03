@@ -19,7 +19,7 @@ def blink():
     time.sleep(1)
 
 def distance():
-    ultrasonic = DistanceSensor(echo=17, trigger=4)
+    ultrasonic = DistanceSensor(echo=17, trigger=4)  # values are the GPIO pins
     while True:
        print(ultrasonic.distance)
        time.sleep(1)

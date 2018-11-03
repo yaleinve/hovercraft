@@ -9,8 +9,8 @@ pin_to_circuit = 17
 
 def setup():
   GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
-  GPIO.setup(LedPin, GPIO.OUT)   # Set LedPin's mode is output
-  GPIO.output(LedPin, GPIO.HIGH) # Set LedPin high(+3.3V) to turn on led
+  #GPIO.setup(LedPin, GPIO.OUT)   # Set LedPin's mode is output
+  #GPIO.output(LedPin, GPIO.HIGH) # Set LedPin high(+3.3V) to turn on led
 
 def blink():
   while True:
@@ -48,11 +48,11 @@ def rc_time (pin_to_circuit):
 
 if __name__ == '__main__':     # Program start from here
   setup()
-  try:
+  '''try:
     blink()
     # distance()
   except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
-    destroy()
+    destroy()'''
 
   #Catch when script is interrupted, cleanup correctly
   try:

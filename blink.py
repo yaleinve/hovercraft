@@ -46,20 +46,20 @@ def rc_time (pin_to_circuit):
 
     return count
 
-#Catch when script is interrupted, cleanup correctly
-try:
-    # Main loop
-    while True:
-        print rc_time(pin_to_circuit)
-except KeyboardInterrupt:
-    pass
-finally:
-    GPIO.cleanup()
-
 if __name__ == '__main__':     # Program start from here
   setup()
   try:
     blink()
-    distance()
+    # distance()
   except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
     destroy()
+
+  #Catch when script is interrupted, cleanup correctly
+  try:
+    # Main loop
+    while True:
+      print rc_time(pin_to_circuit)
+  except KeyboardInterrupt:
+    pass
+  finally:
+    GPIO.cleanup()
